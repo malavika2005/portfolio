@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Reset default browser styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+    background: #333;
+    color: #fff;
+    padding-top: 30px;
+    min-height: 50px;
+    border-bottom: #ccc 3px solid;
+    width: 100%;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding-top: 15px; /* Reduce padding to decrease height */
+    min-height: 50px; /* Adjust to the desired height */
+}
+
+
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: #e9ecef; /* Light gray background */
+    color: #333;
+    margin: 0;
+    padding-top: 110px; /* Add padding to the top to prevent content from being hidden behind the fixed header */
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+header a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+header ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    float: right;
+    margin-right: 20px;
+}
+
+header li {
+    display: inline;
+    padding: 0 20px 0 20px;
+}
+
+header h1 {
+    float: left;
+    display: inline;
+    padding: 10px;
+    margin: 0;
+}
+
+header nav {
+    float: right;
+    margin-top: 10px;
+}
+
+header #branding {
+    float: left;
+}
+
+header .highlight {
+    color: #fff;
+    font-weight: bold;
+}
+
+header a:hover {
+    color: #fff;
+    background-color: #0099FF;
+    text-decoration: underline;
+}
+
+section {
+    padding: 20px;
+    margin: 20px 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    
+}
+
+section h2 {
+    margin-bottom: 10px;
+}
+
+section p {
+    margin-bottom: 20px;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.profile-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.skills ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skills ul li {
+    background-color:antiquewhite;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skills ul li:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.skills ul li i {
+    font-size: 24px;
+    color: #007bff;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.skills ul li h4 {
+    margin-top: 10px;
+    color: #333;
+    font-size: 18px;
+}
+
+
+.contact-info {
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+}
+
+.contact-info .social-links {
+    margin-top: 10px;
+}
+
+.contact-info .social-links a {
+    color: #333;
+    text-decoration: none;
+    font-size: 20px;
+    margin-right: 10px;
+    transition: color 0.3s ease;
+}
+
+.contact-info .social-links a:hover {
+    color: #007bff;
+}
+
+.contact-form {
+    margin-top: 20px;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+    background: #fff;
+}
+
+.contact-form textarea {
+    height: 120px;
+}
+
+.contact-form button[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button[type="submit"]:hover {
+    background-color: #555;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    color: #fff;
+    background-color: #333;
+}
+
+.institution-img {
+    max-width: 20%;
+    height: auto;
+    display: block;
+    margin: 10px 0;
+}
+
+.welcome-gif {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+.highlight {
+    color: #007bff;
+    font-weight: bold;
+}
+
+#projects {
+    background-color: #f4f4f4; /* Light background for contrast */
+    padding: 40px 20px;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.project {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project:hover {
+    transform: translateY(-10px); /* Slight lift effect on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.project-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+.project-info {
+    padding: 20px;
+}
+
+.project-info h3 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.project-info p {
+    margin-bottom: 15px;
+    color: #666;
+}
+
+.project-tags {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #007bff; /* Highlight color for tags */
+    font-weight: bold;
+}
+
+#certifications {
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    margin: 20px 0;
+}
+
+#certifications h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.certificates {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.certificate {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certificate-info h3 {
+    margin: 10px 0;
+    color: #333;
+}
+
+.certificate:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.resume-container {
+    position: relative;
+    text-align: center;
+    margin: 20px auto; /* Center horizontally */
+    max-width: 600px; /* Adjust based on the size of your resume */
+}
+
+.resume-gif {
+    cursor: pointer;
+    max-width: 40%; /* Adjust as needed */
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto; /* Center horizontally */
+}
+
+.resume {
+    display: none;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 20px auto; /* Center horizontally */
+    max-width: 100%; /* Ensure it fits within the container */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.education {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.education .education-item {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.education .education-item img {
+    max-width: 40%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>My Portfolio</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
+                    <li><a href="#resume">Resume</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home">
+        <div class="container">
+            <h2>Welcome to My Portfolio</h2>
+            <p>
+                Hello there! 👋 I'm <span class="highlight">Malavika R V</span>, a passionate web developer and a dedicated Electronics and Communication Engineering student. I thrive on transforming ideas into interactive digital experiences.
+            </p>
+            <img src="https://cdn.dribbble.com/users/17707/screenshots/2413754/rrr.gif" alt="Welcome GIF" class="welcome-gif">
+            <p>
+                Explore my portfolio to see the projects I've worked on, the skills I've acquired, and how you can get in touch with me. Let's build something amazing together!
+            </p>
+            <p>
+                <span class="highlight">Projects</span> that showcase my skills and interests.
+            </p>
+            <p>
+                <span class="highlight">Skills</span> in various web development technologies.
+            </p>
+            <p>
+                <span class="highlight">Contact</span> information to reach out and collaborate.
+            </p>
+        </div>
+    </section>
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>Hi, I'm Malavika, a web developer currently pursuing my Bachelor's degree in Electronics and Communication Engineering at Sri Krishna College of Technology, Coimbatore.</p>
+            <p>With a strong foundation in web development and a passion for technology, I have been involved in various projects that showcase my skills and dedication.</p>
+            
+            <h3>Personal Statement</h3>
+            <p>I believe in the power of technology to transform ideas into reality. My goal is to create innovative and user-centric solutions that not only meet but exceed expectations. I am particularly interested in developing applications that enhance user experiences.</p>
+        
+            <h3>Professional Goals</h3>
+            <p>My aim is to continue growing as a web developer by working on diverse projects that challenge me and push the boundaries of what is possible. I am also keen on contributing to open-source projects and collaborating with other professionals in the industry to stay ahead of the curve.</p>
+            
+            <h3>Hobbies and Interests</h3>
+            <p>Outside of technology, I enjoy exploring new places, reading about emerging trends in tech, and working on creative side projects. I am an avid learner and always on the lookout for new opportunities to expand my knowledge and skills.</p>
+            <h3>Education</h3>
+            <div class="education">
+                <div class="education-item">
+                    
+                    <h3>Sri Krishna College of Technology, Coimbatore</h3>
+                    <img src="https://www.pinpng.com/pngs/m/167-1679910_skct-sri-krishna-college-of-technology-coimbatore-logo.png" alt="Sri Krishna College of Technology">
+                    <p>B.E - Electronics and Communication Engineering<br> (2022 - Present)</p>
+                </div>
+                <div class="education-item">
+                    <h3>Sree Rama Krishna Bala Vidhya Matriculation Higher Secondary School, Kanyakumari</h3>
+                    <img src="https://i.ytimg.com/vi/9V5oUDer9d0/maxresdefault.jpg" alt="Sree Rama Krishna Bala Vidhya">
+                    <p>HSC- Maths Biology<br> (Graduated in 2022)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    <section id="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <p>Here are some of the projects I've worked on. Each project showcases different skills and technologies I've used.</p>
+            <div class="project-grid">
+                <div class="project">
+                    <div class="project-image">
+                        <img src="tutorial.jpeg" alt="Tutorial Website using React">
+                    </div>
+                    <div class="project-info">
+                        <h3>Tutorial Website using React</h3>
+                        <p>The Tutorial Website is a responsive React platform offering dynamic content management and secure user authentication. It features interactive tutorials with code examples, quizzes, and progress tracking.</p>
+                        <p class="project-tags">#React #WebDevelopment #Interactive</p>
+                    </div>
+                </div>
+                <div class="project">
+                    <div class="project-image">
+                        <img src="book.jpeg" alt="Loans Desk">
+                    </div>
+                    <div class="project-info">
+                        <h3>Loans Desk</h3>
+                        <p>The E-Book Reading Page offers an immersive experience with customizable text settings, bookmarking, and note-taking features. It is responsive and compatible across devices.</p>
+                        <p class="project-tags">#EBook #ResponsiveDesign #UserExperience</p>
+                    </div>
+                </div>
+                <div class="project">
+                    <div class="project-image">
+                        <img src="port.jpg" alt="Loans Desk">
+                    </div>
+                    <div class="project-info">
+                        <h3>My Portfolio</h3>
+                        <p> I developed a responsive portfolio website using HTML and CSS to highlight my skills and projects. It includes interactive elements, smooth navigation, and showcases my work and certifications.</p>
+                        <p class="project-tags">#WebDevelopment
+                     #PortfolioDesign
+                            #HTMLCSS</p>
+                    </div>
+                </div>
+                <!-- Add more projects as needed -->
+            </div>
+        </div>
+    </section>
+    <section id="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="skills">
+                <ul>
+                    <li>
+                        <i class="fab fa-html5"></i>
+                        <h4>HTML & CSS</h4>
+                    </li>
+                    <li>
+                        <i class="fab fa-js"></i>
+                        <h4>JavaScript</h4>
+                    </li>
+                    <li>
+                        <i class="fas fa-code"></i>
+                        <h4>Frontend Development</h4>
+                    </li>
+                    <li>
+                        <i class="fab fa-git"></i>
+                        <h4>Version Control (Git)</h4>
+                    </li>
+                    <li>
+                        <i class="fas fa-database"></i>
+                        <h4>MySQL</h4>
+                    </li>
+                    <li>
+                        <i class="fab fa-react"></i>
+                        <h4>React</h4>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    
+
+    <section id="certifications">
+        <div class="container">
+            <h2>Certifications</h2>
+            <div class="certificates">
+                <div class="certificate">
+                    <div class="certificate-info">
+                        <h3>Information to Internet of Things and Embedded System</h3>
+                    </div>
+                </div>
+                <div class="certificate">
+                    <div class="certificate-info">
+                        <h3>Html ,Css and JavaScript for Web Developers</h3>
+                    </div>
+                </div>
+                <div class="certificate">
+                    <div class="certificate-info">
+                        <h3>Moral Thinking:An Introduction to Values and Ethics by Nptel</h3>
+                    </div>
+                </div>
+                <div class="certificate">
+                    <div class="certificate-info">
+                        <h3>Introduction to MongoDB for Students by MongoDB University</h3>
+                    </div>
+                </div>
+                <div class="certificate">
+                    <div class="certificate-info">
+                        <h3>Internship of IoT Developer from Exposys Data Labs</h3>
+                    </div>
+                </div>
+                <div class="certificate">
+                    <div class="certificate-info">
+                        <h3>Infosys Springboard certification on IoT processer</h3>
+                    </div>
+                </div>
+                
+                <!-- Add more certifications as needed -->
+            </div>
+        </div>
+    </section>
+
+    <section id="resume">
+        <div class="container">
+            <h2>Resume</h2>
+            <div class="resume-container">
+                <img src="https://media.istockphoto.com/id/1406758545/vector/job-seeker-concept.jpg?s=612x612&w=0&k=20&c=XsmrTOgBj4m3TpLL1JvdG6ZeTLL6rZ-ejNFWoI0mvr8=" alt="Resume GIF" class="resume-gif" id="resume-toggle">
+                <div class="resume" id="resume-content">
+                    
+                    <p>Here is a brief summary of my qualifications and experiences. <a href="Malavika Resume.pdf" target="_blank"><h3>MY RESUME</h3></a>.</p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <p>If you have any questions or just want to say hello, feel free to get in touch with me through the links below or reach out via my contact details.</p>
+            <div class="contact-info">
+                <p><i class="fas fa-envelope icon"></i><a href="mailto:malavikavidheesh2020@gmail.com">Email: malavikavidheesh2020@gmail.com</a></p>
+                <p><i class="fas fa-phone icon"></i><a href="tel:8973531844">Phone: 8973531844</a></p>
+                <div class="social-links">
+                    <a href="https://github.com/malavika2005" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://leetcode.com/u/Malavika_RV/" target="_blank" title="LeetCode"><i class="fab fa-leetcode"></i></a>
+                    <a href="https://www.linkedin.com/in/malavika-r-v-867540258?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BZhebWwL5SKaPJU07gUpkhw%3D%3D" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+                <p><i class="fas fa-map-marker-alt icon"></i>Address: 3/18, Theriam Veedu, Anchukandarai, Kulasekharam, Kanyakumari</p>
+            </div>
+        </div>
+    </section>
+    
+
+    <footer>
+        <div class="container">
+            <p></p>
+        </div>
+    </footer>
+
+    <!-- Font Awesome CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+    <script>
+        document.getElementById('resume-toggle').addEventListener('click', function() {
+            var resumeContent = document.getElementById('resume-content');
+            if (resumeContent.style.display === 'none' || resumeContent.style.display === '') {
+                resumeContent.style.display = 'block';
+            } else {
+                resumeContent.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
